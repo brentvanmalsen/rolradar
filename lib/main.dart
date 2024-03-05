@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
+import 'ontdek_page.dart'; // Importeer OntdekPage class
+import 'profiel_page.dart'; // Importeer ProfielPage class
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'RolRadar',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme:
+            ColorScheme.fromSeed(seedColor: Color.fromARGB(255, 0, 0, 0)),
         useMaterial3: true,
       ),
       home: const MyHomePage(),
@@ -21,7 +24,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+  const MyHomePage({Key? key}) : super(key: key);
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -32,8 +35,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   final List<Widget> _pages = [
     PageOne(),
-    PageTwo(),
-    PageThree(),
+    OntdekPage(), // Gebruik OntdekPage
+    ProfielPage(), // Gebruik ProfielPage
   ];
 
   void _onItemTapped(int index) {
@@ -82,28 +85,6 @@ class PageOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: const Text('Home'),
-    );
-  }
-}
-
-class PageTwo extends StatelessWidget {
-  const PageTwo({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: const Text('Ontdek'),
-    );
-  }
-}
-
-class PageThree extends StatelessWidget {
-  const PageThree({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(
-      child: const Text('Profiel'),
     );
   }
 }

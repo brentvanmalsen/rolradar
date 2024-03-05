@@ -81,7 +81,7 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: const Text('Page One'),
+      child: const Text('Home'),
     );
   }
 }
@@ -92,7 +92,7 @@ class PageTwo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: const Text('Page Two'),
+      child: const Text('Ontdek'),
     );
   }
 }
@@ -103,7 +103,7 @@ class PageThree extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: const Text('Page Three'),
+      child: const Text('Profiel'),
     );
   }
 }

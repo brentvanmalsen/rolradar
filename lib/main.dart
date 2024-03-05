@@ -84,7 +84,7 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: const Text('Home'),
+      child: const Text('Pagina Brent'),
     );
   }
 }

@@ -59,15 +59,15 @@ class _MyHomePageState extends State<MyHomePage> {
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'Page 1',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.explore),
-            label: 'Page 2',
+            label: 'Ontdek',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
-            label: 'Page 3',
+            label: 'Profiel',
           ),
         ],
       ),

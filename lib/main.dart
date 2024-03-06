@@ -48,10 +48,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: const Text('Flutter Demo'),
-      ),
       body: IndexedStack(
         index: _currentIndex,
         children: _pages,
@@ -84,7 +80,47 @@ class PageOne extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: const Text('Pagina Brent'),
+      // Plaatst de inhoud van de widget in het midden van het scherm
+      child: Column(
+        // Een widget die zijn kinderen verticaal onder elkaar plaatst
+        mainAxisAlignment:
+            MainAxisAlignment.center, // Centreert de kolom in de verticale as
+        children: [
+          // Lijst van widgets die verticaal onder elkaar worden geplaatst
+          const SizedBox(height: 20), // Een lege ruimte van 20 pixels hoogte
+          Container(
+            // Een rechthoekige doos voor meer lay-out
+            padding: const EdgeInsets.all(
+                16), // Vulling van 16 pixels aan alle kanten van de doos
+            decoration: BoxDecoration(
+              // Decoratie voor de doos, zoals achtergrondkleur en rand
+              color: Colors.grey[200], // Achtergrondkleur lichtgrijs
+              borderRadius:
+                  BorderRadius.circular(10), // Afgeronde hoeken van 10 pixels
+            ),
+            child: Column(
+              // Een andere kolom van widgets binnen de doos
+              children: [
+                const Text(
+                  // Tekstwidget met de tekst binnen de doos
+                  'Dit is een tekst in de box!', // Tekst binnen de doos
+                  style: TextStyle(fontSize: 16), // Lettergrootte van 16 pixels
+                ),
+                const SizedBox(
+                    height: 10), // Een lege ruimte van 10 pixels hoogte
+                ElevatedButton(
+                  // Een verhoogde knopwidget
+                  onPressed: () {
+                    // Functie voor wat er moet gebeuren wanneer de knop wordt ingedrukt
+                  },
+                  child:
+                      const Text('Klik hier'), // Tekst op de knop: 'Klik hier'
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -34,8 +34,8 @@ class OntdekPage extends StatelessWidget {
     );
   }
 
-  Widget _buildProfile(
-      BuildContext context, String name, String role, String description) {
+  Widget _buildProfile(BuildContext context, String name, String role,
+      String description, String imagePath) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 7, vertical: 10),
       padding: EdgeInsets.all(5),
@@ -52,9 +52,11 @@ class OntdekPage extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
               color: Colors.grey[300],
+              image: DecorationImage(
+                image: AssetImage(imagePath),
+                fit: BoxFit.cover,
+              ),
             ),
-            // Placeholder voor de linker foto
-            child: Icon(Icons.person),
           ),
           SizedBox(width: 10),
           // Tekstgedeelte
@@ -85,18 +87,6 @@ class OntdekPage extends StatelessWidget {
                 ),
               ],
             ),
-          ),
-          SizedBox(width: 10),
-          // Rechter foto
-          Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Colors.grey[300],
-            ),
-            // Placeholder voor de rechter foto
-            child: Icon(Icons.person),
           ),
         ],
       ),
@@ -195,19 +185,21 @@ class OntdekPage extends StatelessWidget {
                 height:
                     0), // Ruimte onder de knoppen en boven de profiel sectie
             // Profiel sectie
-            _buildProfile(context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer'),
-            _buildProfile(
-                context, 'Jorg van de Rijdt', 'Developer', 'Software Engineer'),
-            _buildProfile(
-                context, 'Brent van Malsen', 'Designer', 'Graphic Designer'),
+            _buildProfile(context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer',
+                'assets/barry_batsbak.jpg'),
+            _buildProfile(context, 'Jorg van de Rijdt', 'Groepswerker',
+                'Software Engineer', 'assets/jorg_van_de_rijdt.png'),
+            _buildProfile(context, 'Brent van Malsen', 'Monitor',
+                'Graphic Designer', 'assets/brent_van_malsen.jpg'),
             _buildProfile(context, 'Marcel Veldhuizen', 'Back-end Ontwikkelaar',
-                'Graphic Designer'),
+                'Graphic Designer', 'assets/marcel_veldhuizen.jpg'),
 
-            _buildProfile(context, 'Jan Jansen', 'Plant', 'UX-Design'),
+            _buildProfile(context, 'Jan Jansen', 'Plant', 'UX-Design',
+                'assets/jan_jansen.jpg'),
             _buildProfile(context, 'Lisa de Vries', 'Brononderzoeker',
-                'Softwareontwikkeling'),
-            _buildProfile(
-                context, 'Pieter Bakker', 'Teamwerker', 'Productmanagement'),
+                'Softwareontwikkeling', 'assets/lisa_de_vries.jpg'),
+            _buildProfile(context, 'Pieter Bakker', 'Teamwerker',
+                'Productmanagement', 'assets/pieter_bakker.jpg'),
           ],
         ),
       ),

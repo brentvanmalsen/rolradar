@@ -135,7 +135,7 @@ class OntdekPage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 0),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -193,13 +193,21 @@ class OntdekPage extends StatelessWidget {
             ),
             SizedBox(
                 height:
-                    20), // Ruimte onder de knoppen en boven de profiel sectie
+                    0), // Ruimte onder de knoppen en boven de profiel sectie
             // Profiel sectie
             _buildProfile(context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer'),
             _buildProfile(
-                context, 'John Doe', 'Developer', 'Software Engineer'),
-            _buildProfile(context, 'Jane Doe', 'Designer', 'Graphic Designer'),
-            // Voeg hier meer profielen toe indien nodig
+                context, 'Jorg van de Rijdt', 'Developer', 'Software Engineer'),
+            _buildProfile(
+                context, 'Brent van Malsen', 'Designer', 'Graphic Designer'),
+            _buildProfile(context, 'Marcel Veldhuizen', 'Back-end Ontwikkelaar',
+                'Graphic Designer'),
+
+            _buildProfile(context, 'Jan Jansen', 'Plant', 'UX-Design'),
+            _buildProfile(context, 'Lisa de Vries', 'Brononderzoeker',
+                'Softwareontwikkeling'),
+            _buildProfile(
+                context, 'Pieter Bakker', 'Teamwerker', 'Productmanagement'),
           ],
         ),
       ),

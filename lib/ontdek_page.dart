@@ -96,112 +96,107 @@ class OntdekPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Color(0xFF1560BD),
       body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            SizedBox(
-                height: MediaQuery.of(context)
-                    .padding
-                    .top), // Voeg hoogte van appbalk toe
-            Padding(
-              padding: const EdgeInsets.all(7.0),
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Zoek naar namen, rollen en of vaardigheden ',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(20.0),
-                    borderSide: BorderSide.none,
-                  ),
-                  filled: true,
-                  fillColor: Colors.grey[200],
-                  prefixIcon: IconButton(
-                    icon: Icon(Icons.search),
-                    onPressed: () {
-                      _startSearch(context);
-                    },
-                  ),
+        child:
+            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+          SizedBox(
+              height: MediaQuery.of(context)
+                  .padding
+                  .top), // Voeg hoogte van appbalk toe
+          Padding(
+            padding: const EdgeInsets.all(7.0),
+            child: TextField(
+              decoration: InputDecoration(
+                hintText: 'Zoek naar namen, rollen en of vaardigheden ',
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(20.0),
+                  borderSide: BorderSide.none,
+                ),
+                filled: true,
+                fillColor: Colors.grey[200],
+                prefixIcon: IconButton(
+                  icon: Icon(Icons.search),
+                  onPressed: () {
+                    _startSearch(context);
+                  },
                 ),
               ),
             ),
-            SizedBox(height: 0),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    margin: EdgeInsets.all(7.0),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 255, 255, 255),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Denker',
-                        style: TextStyle(
-                            color: const Color.fromARGB(255, 0, 0, 0)),
-                      ),
+          ),
+          SizedBox(height: 0),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Expanded(
+                child: Container(
+                  height: 50,
+                  margin: EdgeInsets.all(7.0),
+                  decoration: BoxDecoration(
+                    color: Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Denker',
+                      style:
+                          TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    margin: EdgeInsets.all(7.0),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Sociaal',
-                        style: TextStyle(color: Colors.black),
-                      ),
+              ),
+              Expanded(
+                child: Container(
+                  height: 50,
+                  margin: EdgeInsets.all(7.0),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Sociaal',
+                      style: TextStyle(color: Colors.black),
                     ),
                   ),
                 ),
-                Expanded(
-                  child: Container(
-                    height: 50,
-                    margin: EdgeInsets.all(7.0),
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 255, 255, 255),
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Doener',
-                        style: TextStyle(
-                            color: const Color.fromARGB(255, 0, 0, 0)),
-                      ),
+              ),
+              Expanded(
+                child: Container(
+                  height: 50,
+                  margin: EdgeInsets.all(7.0),
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(255, 255, 255, 255),
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      'Doener',
+                      style:
+                          TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
                     ),
                   ),
                 ),
-              ],
-            ),
-            SizedBox(
-                height:
-                    0), // Ruimte onder de knoppen en boven de profiel sectie
-            // Profiel sectie
-            _buildProfile(context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer',
-                'assets/barry_batsbak.jpg'),
-            _buildProfile(context, 'Jorg van de Rijdt', 'Groepswerker',
-                'Software Engineer', 'assets/jorg_van_de_rijdt.png'),
-            _buildProfile(context, 'Brent van Malsen', 'Monitor',
-                'Graphic Designer', 'assets/brent_van_malsen.jpg'),
-            _buildProfile(context, 'Marcel Veldhuizen', 'Back-end Ontwikkelaar',
-                'Graphic Designer', 'assets/marcel_veldhuizen.jpg'),
-
-            _buildProfile(context, 'Jan Jansen', 'Plant', 'UX-Design',
-                'assets/jan_jansen.jpg'),
-            _buildProfile(context, 'Lisa de Vries', 'Brononderzoeker',
-                'Softwareontwikkeling', 'assets/lisa_de_vries.jpg'),
-            _buildProfile(context, 'Pieter Bakker', 'Teamwerker',
-                'Productmanagement', 'assets/pieter_bakker.jpg'),
-          ],
-        ),
+              ),
+            ],
+          ),
+          SizedBox(
+              height: 0), // Ruimte onder de knoppen en boven de profiel sectie
+          // Profiel sectie
+          _buildProfile(
+              context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer', ''),
+          _buildProfile(context, 'Jorg van de Rijdt', 'Groepswerker',
+              'Software Engineer', ''),
+          _buildProfile(
+              context, 'Brent van Malsen', 'Monitor', 'Graphic Designer', ''),
+          _buildProfile(context, 'Marcel Veldhuizen', 'Back-end Ontwikkelaar',
+              'Graphic Designer', ''),
+          _buildProfile(context, 'Jan Jansen', 'Plant', 'UX-Design', ''),
+          _buildProfile(context, 'Lisa de Vries', 'Brononderzoeker',
+              'Softwareontwikkeling', ''),
+          _buildProfile(
+              context, 'Pieter Bakker', 'Teamwerker', 'Productmanagement', ''),
+        ]),
       ),
     );
   }

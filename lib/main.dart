@@ -80,63 +80,92 @@ class PageOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.grey[200],
-              borderRadius: BorderRadius.circular(10),
+    return Container(
+      color: const Color(0xFF1560BD), // Kleur #1560BD
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 20),
+            Container(
+              width: MediaQuery.of(context).size.width *
+                  0.9, // 80% van de scherm breedte
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.grey[200],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'Belbin-rollen test',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Ontdek jouw unieke teamstijl met de Belbin-rollen test.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'RobotoLight',
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    child: const Text('Klik hier'),
+                  ),
+                ],
+              ),
             ),
-            child: Column(
-              children: [
-                const Text(
-                  'Belbin-rollen test',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Ontdek jouw unieke teamstijl met de Belbin-rollen test.',
-                  style: TextStyle(fontSize: 16),
-                ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Klik hier'),
-                ),
-              ],
+            const SizedBox(height: 20),
+            Container(
+              width: MediaQuery.of(context).size.width *
+                  0.9, // 80% van de scherm breedte
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.blue[200],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    'Rollen van collega’s',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    'Bekijk de rollen van je collega’s om meer inzicht te krijgen in hun sterke en zwakke punten.',
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'RobotoLight',
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      padding:
+                          EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                      textStyle: const TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    child: const Text('Klik hier ook!'),
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(height: 20),
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: Colors.blue[200],
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: [
-                const Text(
-                  'Belbin-rollen test',
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                const SizedBox(height: 10),
-                const Text(
-                  'Ontdek jouw unieke teamstijl met de Belbin-rollen test.',
-                  style: TextStyle(fontSize: 16),
-                ),
-                const SizedBox(height: 10),
-                ElevatedButton(
-                  onPressed: () {},
-                  child: const Text('Klik hier ook!'),
-                ),
-              ],
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

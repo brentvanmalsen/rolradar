@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/services.dart';
 
 class UitlegPage extends StatefulWidget {
   const UitlegPage({Key? key}) : super(key: key);
@@ -12,6 +11,7 @@ class UitlegPage extends StatefulWidget {
 class _UitlegPageState extends State<UitlegPage> {
   String? selectedFunction;
   late AudioCache audioCache;
+  bool functionSelected = false;
 
   @override
   void initState() {
@@ -73,8 +73,8 @@ class _UitlegPageState extends State<UitlegPage> {
                       onChanged: (newValue) {
                         setState(() {
                           selectedFunction = newValue;
+                          functionSelected = true;
                         });
-                        // _playConfirmationSound(); // Geluid afspelen bij keuze
                       },
                       items: <String>[
                         'UX-UI Designer',
@@ -91,19 +91,32 @@ class _UitlegPageState extends State<UitlegPage> {
                     const SizedBox(height: 20),
                     ElevatedButton(
                       onPressed: () {
-                        _playConfirmationSound();
+                        if (functionSelected) {
+                          _playConfirmationSound();
+                        } else {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text('Selecteer eerst een functie!'),
+                              backgroundColor: Colors.red,
+                            ),
+                          );
+                          // Hier kun je de randkleur van de BottomNavigationBar instellen
+                        }
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(222, 119, 34, 1),
                         foregroundColor: Colors.white,
                         elevation: 0, // Verwijdert de schaduw
-                        side: const BorderSide(
-                          color: const Color.fromRGBO(
-                              222, 119, 34, 1), // Kleur van de rand
-                          width: 2, // Dikte van de rand
-                        ),
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                        side: functionSelected
+                            ? const BorderSide(
+                                color: Colors.transparent, // Kleur van de rand
+                                width: 2, // Dikte van de rand
+                              )
+                            : const BorderSide(
+                                color: Colors.red, // Kleur van de rand
+                                width: 2, // Dikte van de rand
+                              ),
+                        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                         textStyle: const TextStyle(
                           fontSize: 20,
                           fontWeight: FontWeight.bold,
@@ -140,6 +153,7 @@ class _UitlegPageState extends State<UitlegPage> {
             label: 'Profiel',
           ),
         ],
+        selectedItemColor: functionSelected ? Colors.blue : Colors.red,
       ),
     );
   }

@@ -113,6 +113,8 @@ class PageOne extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
+                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),//change text color of button
+                      backgroundColor: Colors.orange,
                       padding:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       textStyle: const TextStyle(
@@ -131,7 +133,7 @@ class PageOne extends StatelessWidget {
                   0.9, // 80% van de scherm breedte
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.blue[200],
+                color: const Color.fromARGB(255, 249, 249, 249),
                 borderRadius: BorderRadius.circular(10),
               ),
               child: Column(
@@ -152,6 +154,8 @@ class PageOne extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
+                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),//change text color of button
+                      backgroundColor: Colors.orange,
                       padding:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       textStyle: const TextStyle(

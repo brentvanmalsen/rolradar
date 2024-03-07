@@ -35,7 +35,7 @@ class OntdekPage extends StatelessWidget {
   }
 
   Widget _buildProfile(BuildContext context, String name, String role,
-      String description, String imagePath) {
+      String description, String imagePath, String rightImagePath) {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 7, vertical: 10),
       padding: EdgeInsets.all(5),
@@ -88,6 +88,21 @@ class OntdekPage extends StatelessWidget {
               ],
             ),
           ),
+          // Rechter afbeelding met margin
+          if (rightImagePath.isNotEmpty)
+            Container(
+              margin: EdgeInsets.only(right: 10),
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(30),
+                color: Colors.grey[300],
+                image: DecorationImage(
+                  image: AssetImage(rightImagePath),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
         ],
       ),
     );
@@ -98,107 +113,153 @@ class OntdekPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF1560BD),
       body: SingleChildScrollView(
-        child:
-            Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-          SizedBox(
-              height: MediaQuery.of(context)
-                  .padding
-                  .top), // Voeg hoogte van appbalk toe
-          Padding(
-            padding: const EdgeInsets.all(7.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Zoek naar namen, rollen en of vaardigheden ',
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20.0),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: Colors.grey[200],
-                prefixIcon: IconButton(
-                  icon: Icon(Icons.search),
-                  onPressed: () {
-                    _startSearch(context);
-                  },
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(height: MediaQuery.of(context).padding.top),
+            Padding(
+              padding: const EdgeInsets.all(7.0),
+              child: TextField(
+                decoration: InputDecoration(
+                  hintText: 'Zoek naar namen, rollen en of vaardigheden ',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                    borderSide: BorderSide.none,
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  prefixIcon: IconButton(
+                    icon: Icon(Icons.search),
+                    onPressed: () {
+                      _startSearch(context);
+                    },
+                  ),
                 ),
               ),
             ),
-          ),
-          SizedBox(height: 0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(
-                child: Container(
-                  height: 50,
-                  margin: EdgeInsets.all(7.0),
-                  decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Denker',
-                      style:
-                          TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
+            SizedBox(height: 0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Expanded(
+                  child: Container(
+                    height: 50,
+                    margin: EdgeInsets.all(7.0),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Denker',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 50,
-                  margin: EdgeInsets.all(7.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Sociaal',
-                      style: TextStyle(color: Colors.black),
+                Expanded(
+                  child: Container(
+                    height: 50,
+                    margin: EdgeInsets.all(7.0),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Sociaal',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Expanded(
-                child: Container(
-                  height: 50,
-                  margin: EdgeInsets.all(7.0),
-                  decoration: BoxDecoration(
-                    color: const Color.fromARGB(255, 255, 255, 255),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: Center(
-                    child: Text(
-                      'Doener',
-                      style:
-                          TextStyle(color: const Color.fromARGB(255, 0, 0, 0)),
+                Expanded(
+                  child: Container(
+                    height: 50,
+                    margin: EdgeInsets.all(7.0),
+                    decoration: BoxDecoration(
+                      color: Color.fromARGB(255, 255, 255, 255),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    child: Center(
+                      child: Text(
+                        'Doener',
+                        style: TextStyle(color: Colors.black),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
-          ),
-          SizedBox(
-              height: 0), // Ruimte onder de knoppen en boven de profiel sectie
-          // Profiel sectie
-          _buildProfile(context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer',
-              'assets/barry.jpg'),
-          _buildProfile(context, 'Jorg van de Rijdt', 'Groepswerker',
-              'Software Engineer', 'assets/profiel.jpg'),
-          _buildProfile(context, 'Brent van Malsen', 'Monitor',
-              'Graphic Designer', 'assets/brent.png'),
-          _buildProfile(context, 'Marcel Veldhuizen', 'Back-end Ontwikkelaar',
-              'Graphic Designer', 'assets/marcel.png'),
-          _buildProfile(context, 'Erik Heijligers', 'Plant', 'UX-Design',
-              'assets/Erik.jpg'),
-          _buildProfile(context, 'Lisa de Vries', 'Brononderzoeker',
-              'Softwareontwikkeling', ''),
-          _buildProfile(
-              context, 'Pieter Bakker', 'Teamwerker', 'Productmanagement', ''),
-        ]),
+              ],
+            ),
+            SizedBox(height: 0),
+            // Profiel sectie
+            _buildProfile(
+              context,
+              'Barry Batsbak',
+              'Vormer',
+              'UX-UI Designer',
+              'assets/barry.jpg',
+              'assets/vormer.png',
+            ),
+            _buildProfile(
+              context,
+              'Jorg van de Rijdt',
+              'Groepswerker',
+              'Software Engineer',
+              'assets/profiel.jpg',
+              'assets/groepswerker.png',
+            ),
+            _buildProfile(
+              context,
+              'Brent van Malsen',
+              'Monitor',
+              'Front-end Developer',
+              'assets/brent.png',
+              'assets/monitor.png',
+            ),
+            _buildProfile(
+              context,
+              'Marcel Veldhuizen',
+              'Plant',
+              'Graphic Designer',
+              'assets/marcel.png',
+              'assets/plant.png',
+            ),
+            _buildProfile(
+              context,
+              'Erik Heijligers',
+              'Bedrijfsman',
+              'UX-Design',
+              'assets/Erik.jpg',
+              'assets/bedrijfsman.png',
+            ),
+            _buildProfile(
+              context,
+              'Lisa de Vries',
+              'Brononderzoeker',
+              'Softwareontwikkeling',
+              'assets/lisa.jpg',
+              'assets/zorgdrager.png',
+            ),
+            _buildProfile(
+              context,
+              'Pieter Bakker',
+              'Teamwerker',
+              'Productmanagement',
+              'assets/pieter.jpg',
+              'assets/vormer.png',
+            ),
+          ],
+        ),
       ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    home: Scaffold(
+      body: OntdekPage(),
+    ),
+  ));
 }

@@ -152,7 +152,11 @@ class OntdekPage extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'Denker',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 17,
+                        ),
                       ),
                     ),
                   ),
@@ -168,7 +172,11 @@ class OntdekPage extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'Sociaal',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 17,
+                        ),
                       ),
                     ),
                   ),
@@ -184,7 +192,11 @@ class OntdekPage extends StatelessWidget {
                     child: Center(
                       child: Text(
                         'Doener',
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 17,
+                        ),
                       ),
                     ),
                   ),

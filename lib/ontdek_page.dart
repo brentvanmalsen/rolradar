@@ -183,15 +183,16 @@ class OntdekPage extends StatelessWidget {
           SizedBox(
               height: 0), // Ruimte onder de knoppen en boven de profiel sectie
           // Profiel sectie
-          _buildProfile(
-              context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer', ''),
+          _buildProfile(context, 'Barry Batsbak', 'Vormer', 'UX-UI Designer',
+              'assets/barry.jpg'),
           _buildProfile(context, 'Jorg van de Rijdt', 'Groepswerker',
-              'Software Engineer', ''),
-          _buildProfile(
-              context, 'Brent van Malsen', 'Monitor', 'Graphic Designer', ''),
+              'Software Engineer', 'assets/profiel.jpg'),
+          _buildProfile(context, 'Brent van Malsen', 'Monitor',
+              'Graphic Designer', 'assets/brent.png'),
           _buildProfile(context, 'Marcel Veldhuizen', 'Back-end Ontwikkelaar',
-              'Graphic Designer', ''),
-          _buildProfile(context, 'Jan Jansen', 'Plant', 'UX-Design', ''),
+              'Graphic Designer', 'assets/marcel.png'),
+          _buildProfile(context, 'Erik Heijligers', 'Plant', 'UX-Design',
+              'assets/Erik.jpg'),
           _buildProfile(context, 'Lisa de Vries', 'Brononderzoeker',
               'Softwareontwikkeling', ''),
           _buildProfile(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'ontdek_page.dart';
 import 'profiel_page.dart';
+import 'uitleg_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -111,10 +112,15 @@ class PageOne extends StatelessWidget {
                   ),
                   const SizedBox(height: 10),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => UitlegPage()),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),//change text color of button
-                      backgroundColor: Colors.orange,
+                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),
+                      backgroundColor: const Color.fromRGBO(222, 119, 34, 1),
                       padding:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       textStyle: const TextStyle(
@@ -154,8 +160,10 @@ class PageOne extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: const Color.fromARGB(255, 255, 255, 255),//change text color of button
-                      backgroundColor: Colors.orange,
+                      foregroundColor: const Color.fromARGB(
+                          255, 255, 255, 255), //change text color of button
+                      backgroundColor: const Color.fromRGBO(
+                          222, 119, 34, 1), //change text color of button
                       padding:
                           EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                       textStyle: const TextStyle(

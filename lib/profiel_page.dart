@@ -13,14 +13,26 @@ class ProfielPage extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/images/profile_pic.jpg'),
+              backgroundImage: AssetImage('assets/profiel.jpg'),
             ),
             SizedBox(height: 20),
-            Text('Voornaam Achternaam', style: TextStyle(fontSize: 20)),
+            Text(
+              'Jorg van de Rijdt',
+              style: TextStyle(
+                fontSize: 24,
+                color: Colors.white,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
             SizedBox(height: 10),
             Text(
-              'E-mailadres',
-              style: TextStyle(fontSize: 16, color: Colors.white),
+              'jorgvoorbeeld@gmail.com',
+              style: TextStyle(
+                fontSize: 16,
+                color: Colors.white,
+                decoration: TextDecoration.underline,
+                decorationColor: Colors.white,
+              ),
             ),
             SizedBox(height: 20),
             Container(
@@ -64,7 +76,7 @@ class ProfielPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    'Titel 2',
+                    'Min-punten',
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
@@ -73,7 +85,7 @@ class ProfielPage extends StatelessWidget {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'Tekst voor Titel 2',
+                    'Tunnelvisie op winst, overmatig risico nemen, focus op korte termijn, gebrek aan empathie, te competitief en inflexibiliteit.',
                     style: TextStyle(
                       fontSize: 16,
                       color: Colors.black,
@@ -83,34 +95,45 @@ class ProfielPage extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Actie voor de eerste knop
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFDE7722), // achtergrondkleur
-              ),
-              child: Text(
-                'Bekijk mijn team',
-                style: TextStyle(
-                  color: Colors.white, // tekstkleur
-                  fontWeight: FontWeight.bold, // vetgedrukt
+            SizedBox(
+              width: 350,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Actie voor de eerste knop
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFDE7722),
+                  padding: EdgeInsets.all(10),
+                  // Padding toegevoegd
+                ),
+                child: Text(
+                  'Bekijk mijn team',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ),
             SizedBox(height: 10),
-            ElevatedButton(
-              onPressed: () {
-                // Actie voor de tweede knop
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xFFDE7722), // achtergrondkleur
-              ),
-              child: Text(
-                'Bekijk test geschiedenis',
-                style: TextStyle(
-                  color: Colors.white, // tekstkleur
-                  fontWeight: FontWeight.bold, // vetgedrukt
+            SizedBox(
+              width: 350,
+              child: ElevatedButton(
+                onPressed: () {
+                  // Actie voor de tweede knop
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFDE7722),
+                  padding: EdgeInsets.all(10), // Padding toegevoegd
+                ),
+                child: Text(
+                  'Bekijk test geschiedenis',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
                 ),
               ),
             ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:vibration/vibration.dart'; // Importeer het vibration package
 
 class UitlegPage extends StatefulWidget {
   const UitlegPage({Key? key}) : super(key: key);
@@ -21,6 +22,22 @@ class _UitlegPageState extends State<UitlegPage> {
 
   void _playConfirmationSound() {
     audioCache.play('bevestig.mp3');
+  }
+
+  void _startTest() {
+    if (functionSelected) {
+      _playConfirmationSound();
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Selecteer eerst een functie!'),
+          backgroundColor: Colors.red,
+        ),
+      );
+
+      // Speel een trilling af omdat er geen keuze is gemaakt
+      Vibration.vibrate(duration: 100, amplitude: 128);
+    }
   }
 
   @override
@@ -90,19 +107,7 @@ class _UitlegPageState extends State<UitlegPage> {
                     ),
                     const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: () {
-                        if (functionSelected) {
-                          _playConfirmationSound();
-                        } else {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(
-                              content: Text('Selecteer eerst een functie!'),
-                              backgroundColor: Colors.red,
-                            ),
-                          );
-                          // Hier kun je de randkleur van de BottomNavigationBar instellen
-                        }
-                      },
+                      onPressed: _startTest, // Verwijst naar de nieuwe functie
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color.fromRGBO(222, 119, 34, 1),
                         foregroundColor: Colors.white,

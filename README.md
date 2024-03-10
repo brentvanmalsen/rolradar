@@ -29,8 +29,8 @@ Typ in de terminal 'flutter run'
 * Op de Home Pagina, druk op "Start de test" om naar de Uitleg Pagina te gaan.
 * Selecteer je IT functie uit het dropdown menu.
 * Druk op "Start de test" om je teamrolanalyse te beginnen.
-* Ontdek verschillende teamrollen op de Ontdek Pagina.
-* Bekijk jouw gedetailleerde teamrolanalyse op de Profiel Pagina.
+* Ontdek verschillende teamrollen van collega's op de Ontdek Pagina.
+* Bekijk jouw gedetailleerde teamrolanalyse en team op de Profiel Pagina.
 
 ## Wat is nog niet compleet?
 

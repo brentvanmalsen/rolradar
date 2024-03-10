@@ -1,16 +1,46 @@
-# flutter_application_rol_radar
+# RolRadar
 
-A new Flutter project.
+RolRadar is een Flutter applicatie, gemaakt om je te helpen ontdekken welke teamrollen het beste bij je passen. Door het maken van een test krijg je inzicht in je natuurlijke neigingen en sterke punten binnen een teamomgeving.
 
-## Getting Started
+## Pagina's
 
-This project is a starting point for a Flutter application.
+- **main.dart**: Beginpagina met daarop de navigatie naar de Uitleg pagina.
+- **uitleg_page**: Hier selecteer je je IT functie voor de test.
+- **ontdek_page**: Je kunt hier zoeken naar collega's met verschillende teamrollen
+- **profiel_page**: Vanuit je eigen profiel kun je de teamrollen van collega's zien maar ook je testgeschiedenis.
 
-A few resources to get you started if this is your first Flutter project:
+## Functionaliteiten
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- **Interactiefeedback**: Audio- en trillingsfeedback voor interacties.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installatie
+
+1. **Kloon de repository**:
+git clone https://git.fhict.nl/I507960/duo-case-19-verified-resume.git
+
+2. Installeer de benodigde packages:
+Typ in de terminal 'flutter pub get'
+
+3. Start de app:
+Typ in de terminal 'flutter run'
+
+## Gebruik
+
+* Op de Home Pagina, druk op "Start de test" om naar de Uitleg Pagina te gaan.
+* Selecteer je IT functie uit het dropdown menu.
+* Druk op "Start de test" om je teamrolanalyse te beginnen.
+* Ontdek verschillende teamrollen op de Ontdek Pagina.
+* Bekijk jouw gedetailleerde teamrolanalyse op de Profiel Pagina.
+
+## Wat is nog niet compleet?
+
+* De test achter de knop 'Start de test'.
+* De pagina met de uitslag
+* De zoekfunctie op de Ontdek pagina.
+* De 'Mijn team' pagina op de Profiel pagina
+* De 'Bekijk mijn team' knop op de Home pagina.
+
+## Gemaakt door
+
+README: Brent van Malsen  
+RolRadar app: Brent van Malsen & Jorg van de Rijdt

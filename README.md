@@ -16,7 +16,7 @@ RolRadar is een Flutter applicatie, gemaakt om je te helpen ontdekken welke team
 ## Installatie
 
 1. **Kloon de repository**:  
-git clone https://git.fhict.nl/I507960/duo-case-19-verified-resume.git
+git clone https://github.com/brentvanmalsen/rolradar.git
 
 2. **Installeer de benodigde packages**:  
 Typ in de terminal 'flutter pub get'
